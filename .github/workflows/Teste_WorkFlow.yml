@@ -1,3 +1,4 @@
+
 name: Teste WorkFlow
 
 
@@ -5,7 +6,8 @@ on:
   push:
     branches: [ "main", "developer" ]
 
-  workflow_dispatch:
+
+
 jobs:
   test_job:
     name: Executanto job de teste
