@@ -1,0 +1,24 @@
+name: Teste WorkFlow
+
+
+on:
+  push:
+    branches: [ "main", "developer" ]
+
+  workflow_dispatch:
+jobs:
+  test_job:
+    name: Executanto job de teste
+    runs-on: self-hosted
+    steps:
+    - name: Step 1
+      uses: actions/checkout@v2
+
+    - name: Step 2
+      run: echo Olá 2, workflow criado!
+
+    - name: Step 3
+      run: echo Olá 3, workflow criado!
+
+    - name: Step 4
+      run: echo Olá 4, workflow criado!
