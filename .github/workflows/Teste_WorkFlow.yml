@@ -22,7 +22,9 @@ jobs:
         username: 'lemos.antoniof@gmail.com'
         password: ${{ secrets.DOCKER_LOGIN }}
 
-          
-
-
-
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v5.3.0
+      with:
+        context: .
+        tags: 'latest'
+        push: true
