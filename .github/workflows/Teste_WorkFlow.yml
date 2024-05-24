@@ -19,7 +19,7 @@ jobs:
     - name: Docker Login
       uses: docker/login-action@v3.0.0
       with:   
-        username: 'lemos.antoniof@gmail.com'
+        username: 'antoniodevio'
         password: ${{ secrets.DOCKER_LOGIN }}
 
     - name: Build and push Docker images
