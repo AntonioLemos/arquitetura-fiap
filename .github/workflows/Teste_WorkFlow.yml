@@ -27,6 +27,6 @@ jobs:
       with:
         context: .
         file: testedocker.Dockerfile
-        tags: 'antoniolemos/arquitetura-fiap:latest'
+        tags: 'antoniodevio/testearqui:latest'
         push: true
 
