@@ -29,3 +29,4 @@ jobs:
         file: testedocker.Dockerfile
         tags: 'antoniolemos/arquitetura-fiap:latest'
         push: true
+
