@@ -12,6 +12,15 @@ jobs:
   test_job:
     name: Executanto job de teste
     runs-on: ubuntu-latest
+    services:
+      sqlserver:
+        image: mcr.microsoft.com/mssql/server
+        env:
+          ACCEPT_EULA: Y
+          SA_PASSWORD: ${{ secrets.DATA_BASE }}
+        ports:
+          - 1433:1433
+          
     steps:
     - name: Step 1
       uses: actions/checkout@v2
