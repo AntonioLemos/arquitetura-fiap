@@ -44,11 +44,11 @@ jobs:
         tags: 'antoniodevio/testearqui:latest'
         push: true
 
-    - name: Wait for SQL Server to start
-      run: sleep 60
+    - name: Build solution
+      run: dotnet build --configuration Debug --no-restore
 
     - name: Run tests
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --configuration Debug --no-build --verbosity normal
       env:
         ConnectionStrings__DefaultConnection: "Server=localhost,1433;Database=master;User Id=SA;Password=${{ secrets.DATA_BASE }};"
 
