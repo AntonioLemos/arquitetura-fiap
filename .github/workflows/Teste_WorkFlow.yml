@@ -30,3 +30,7 @@ jobs:
         tags: 'antoniodevio/testearqui:latest'
         push: true
 
+    - name: SqlServer in GitHub Actions
+      uses: nnhy/sqlserver-action@v1.0
+          
+
