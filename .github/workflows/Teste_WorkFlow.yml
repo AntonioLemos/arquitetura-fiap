@@ -12,6 +12,17 @@ jobs:
   test_job:
     name: Executanto job de teste
     runs-on: ubuntu-latest
+    services:
+      sqlserver:
+        image: mcr.microsoft.com/mssql/server
+        env:
+          ACCEPT_EULA: Y
+          SA_PASSWORD: ${{ secrets.DATA_BASE }}
+        ports:
+          - 1433:1433
+        options: > 
+          --health-cmd "exit 0" --health-interval 10s --health-timeout 10s --health-retries 5
+          
     steps:
     - name: Step 1
       uses: actions/checkout@v2
@@ -29,8 +40,4 @@ jobs:
         file: testedocker.Dockerfile
         tags: 'antoniodevio/testearqui:latest'
         push: true
-
-    - name: SqlServer in GitHub Actions
-      uses: nnhy/sqlserver-action@v1.0
-          
 
